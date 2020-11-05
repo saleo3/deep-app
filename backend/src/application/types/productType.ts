@@ -29,5 +29,7 @@ export class ProductOrderType
     @Field(type=>Number)
     totalPrice!:number;
 
+    @Field(type=>Date)
+    fechaEnvio!:Date;
 }
 

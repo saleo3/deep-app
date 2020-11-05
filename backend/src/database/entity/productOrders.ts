@@ -16,6 +16,9 @@ export class ProductOrder{
     @Column("decimal", { precision: 5, scale: 2 })
     totalPrice!:number;
 
+    @Column()
+    fechaEnvio!:Date;
+
     @Column({type:'datetime',default: () => 'NOW()'})
     date_created!:string
 

@@ -24,6 +24,8 @@ export class OrderInput{
     @Field(type=>Number)
     cantidad?:number
 
+    @Field({nullable:true})
+    fechaEnvio?:Date;
 }
 
 
@@ -42,5 +44,8 @@ export class OrderUpdateInput{
 
     @Field(type=>Number)
     cantidad?:number
+
+    @Field({nullable:true})
+    fechaEnvio?:Date;
 
 }
