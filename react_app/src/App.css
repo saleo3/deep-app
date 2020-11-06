@@ -1,0 +1,48 @@
+html {
+  text-align: left;
+  background: #f5f4f9;
+}
+
+.hr {
+  border-bottom: solid 1px #c4c4c4;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.hr:after {
+  content: '';
+  width: 106.19px;
+  height: 5.11px;
+  position: absolute;
+  background: #006f45;
+  left: 0;
+  top: -2px;
+}
+
+thead {
+  width: 1075.57px;
+  height: 55.15px;
+
+  background: #e7f4fb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+tbody {
+  width: 1075.57px;
+  height: 65.41px;
+
+  background: #e7e6e6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+input,
+select {
+  margin-bottom: 20px;
+}
