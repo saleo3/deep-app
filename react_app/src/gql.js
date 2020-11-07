@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const GET_ORDERS = gql`
-  query GetOrders {
-    orders {
+export const fragments = {
+  orders: gql`
+    fragment OrdersPart on ProductOrderType {
       id
       cantidad
       product {
@@ -13,7 +13,16 @@ export const GET_ORDERS = gql`
       totalPrice
       fechaEnvio
     }
+  `,
+};
+
+export const GET_ORDERS = gql`
+  query GetOrders {
+    orders {
+      ...OrdersPart
+    }
   }
+  ${fragments.orders}
 `;
 
 export const REMOVE_DELIVERY = gql`
@@ -35,31 +44,17 @@ export const GET_PRODUCTS = gql`
 export const ADD_DELIVERY = gql`
   mutation CreateOrder($order: OrderInput!) {
     createOrder(order: $order) {
-      id
-      cantidad
-      product {
-        name
-        id
-        price
-      }
-      totalPrice
-      fechaEnvio
+      ...OrdersPart
     }
   }
+  ${fragments.orders}
 `;
 
 export const UPDATE_DELIVERY = gql`
   mutation UpdateOrder($order: OrderUpdateInput!) {
     updateOrder(order: $order) {
-      id
-      cantidad
-      product {
-        name
-        id
-        price
-      }
-      totalPrice
-      fechaEnvio
+      ...OrdersPart
     }
   }
+  ${fragments.orders}
 `;

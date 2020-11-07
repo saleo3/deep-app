@@ -2,25 +2,19 @@ import './App.css';
 import { useState } from 'react';
 import AddDelivery from './AddDelivery';
 import Orders from './Orders';
-import loader from './loader.gif';
-import { GET_ORDERS } from './gql';
+import { GET_ORDERS } from '../gql';
 import { useQuery } from '@apollo/client';
+import Loader from './Loader';
 
 function App() {
   const [add, toggleAdd] = useState(false);
   const { loading, error, data } = useQuery(GET_ORDERS);
   const [orderID, setOrder] = useState(null);
 
-  if (loading) return <img src={loader} alt="" />;
-  if (error) return `Error! ${error.message}`;
+  if (loading || error) return <Loader {...{ loading, error }} />;
 
   return (
-    <div
-      style={{
-        margin: '100px 150px',
-        position: 'relative',
-      }}
-    >
+    <div className="app_container">
       Crud
       <div className="hr"></div>
       <Orders

@@ -1,4 +1,6 @@
-import { GET_ORDERS } from './gql';
+import { GET_ORDERS } from '../../gql';
+import CloseButton from '../CloseButton';
+import './styles.css';
 
 export default function Delete({ handler, removeDelivery, id, name }) {
   const buttonStyles = {
@@ -8,33 +10,11 @@ export default function Delete({ handler, removeDelivery, id, name }) {
     display: 'block',
     margin: '0 auto',
   };
+
   return (
-    <div
-      style={{
-        zIndex: 1,
-        position: 'fixed',
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        top: 0,
-        left: 0,
-        background: 'white',
-        textAlign: 'center',
-      }}
-    >
+    <div className="delete_container" style={{ textAlign: 'center' }}>
       <br />
-      <button
-        style={{
-          background: '#F55145',
-          color: 'white',
-          border: 'none',
-          position: 'absolute',
-          right: '10px',
-        }}
-        onClick={() => handler([])}
-      >
-        X
-      </button>
+      <CloseButton handler={handler} />
       <br />
       Eliminar Entrega
       <br />

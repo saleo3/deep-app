@@ -46,3 +46,8 @@ input,
 select {
   margin-bottom: 20px;
 }
+
+.app_container {
+  margin: 100px 150px;
+  position: relative;
+}

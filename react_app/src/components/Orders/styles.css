@@ -1,0 +1,22 @@
+.table-title {
+  position: absolute;
+  width: 234.84px;
+  height: 30.64px;
+  background: #32368e;
+  border: 1px solid #32368e;
+  top: -32px;
+  left: 0;
+  color: white;
+}
+
+.orders_container {
+  background: white;
+  padding: 40px;
+  position: relative;
+}
+
+.add-button {
+  position: absolute;
+  top: -32px;
+  right: 0;
+}
